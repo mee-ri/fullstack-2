@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Meeri's Guestbook App</title>
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+    body {
+        padding-top: 50px;
+    }
+    footer {
+        text-align: center;
+        color: gray;
+    }
+</style>
+</head>
+
+<body class="container">
+
+    <header>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+        
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+                        Welcome
+                    </a>
+                </div>
+        
+            </div>
+        
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h3> Add a new customer</h3>
+            <form method="post" action="/add">
+                CustomerID: <input type="number" name="customerId" required>
+                <br> First name: <input type="text" name="firstname" required>
+                <br> Last name: <input type="text" name="lastname" required>
+                <br> Phone: <input type="text" name="phone" required>
+                <br> Email: <input type="text" name="email" required>
+                <br> Age: <input type="number" name="age" required>
+                <br>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+
+    </main>
+
+</body>
+
+    <footer>
+        <p> Copyright Meeri Klemola </p>
+    </footer>
+    
+</html>
