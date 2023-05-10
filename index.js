@@ -93,7 +93,8 @@ app.post("/add", async (req, res) => {
 
   try {
     await uusiAsiakas.save();
-    res.status(201).json({ message: "New document succesfully added!" });
+    res.status(201).json({ message: "New document succesfully added" });
+    console.log("New document succesfully added");
   } catch (e) {
     console.error(e);
   }
@@ -103,7 +104,18 @@ app.post("/add", async (req, res) => {
 app.put("/api/update/:id", async (req, res) => {});
 
 // Poistetaan dokumentti, jolla tietty id, DELETE-pyynnöllä
-app.delete("/api/delete/:id", async (req, res) => {});
+app.delete("/api/poista/:id", async (req, res) => {
+  var id = req.params.id;
+  async function connect() {
+    try {
+      const poisto = await Customer.findByIdAndDelete(id);
+      res.json("Deleted " + id + " " + results.title, 200);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  connect();
+});
 
 app.get("*", function (req, res) {
   res.send("Page not found :(", 404);

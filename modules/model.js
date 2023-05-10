@@ -9,6 +9,7 @@ const customerSchema = new mongoose.Schema({
   phone: String,
   email: String,
   age: Number,
+  // {versionKey: false} // Tällä saa halutessaan versioavaimen pois uudesta dokumentista
 });
 
 // Luodaan Customer-niminen malli
