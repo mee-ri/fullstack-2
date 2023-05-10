@@ -117,6 +117,7 @@ app.delete("/api/poista/:id", async (req, res) => {
   connect();
 });
 
+// Määritellään toiminto sille, kun käyttäjän antamaa polkua ei löydy
 app.get("*", function (req, res) {
   res.send("Page not found :(", 404);
 });
