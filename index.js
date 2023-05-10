@@ -104,7 +104,7 @@ app.post("/add", async (req, res) => {
 app.put("/api/update/:id", async (req, res) => {});
 
 // Poistetaan dokumentti, jolla tietty id, DELETE-pyynnöllä
-app.delete("/api/poista/:id", async (req, res) => {
+app.delete("/api/delete/:id", async (req, res) => {
   var id = req.params.id;
   async function connect() {
     try {
