@@ -101,9 +101,6 @@ app.post("/add", async (req, res) => {
   }
 });
 
-// Päivitetään dokumenttia, jolla tietty id, PUT-pyynnöllä
-app.put("/api/update/:id", async (req, res) => {});
-
 // Poistetaan dokumentti, jolla tietty id, DELETE-pyynnöllä
 app.delete("/api/delete/:id", async (req, res) => {
   var id = req.params.id;
