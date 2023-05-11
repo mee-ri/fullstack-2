@@ -36,7 +36,7 @@ const client = mongoose.connect(uri, {
   useUnifiedTopology: true,
 });
 
-// Luodaan reitit
+// Luodaan reitit ja toiminnallisuudet
 
 // Tulostetaan kaikki dokumentit collectionista GET-pyynnöllä
 app.get("/api/getall", async (req, res) => {
