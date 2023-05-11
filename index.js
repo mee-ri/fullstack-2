@@ -43,8 +43,8 @@ app.get("/api/getall", async (req, res) => {
   async function connect() {
     try {
       const asiakkaat = await Customer.find({});
-      console.log("Kaikki asiakkaat haettu");
       res.send(asiakkaat);
+      console.log("All customers fetched");
     } catch (e) {
       res.status(500).json("Connection error");
       console.error(e);
@@ -61,6 +61,7 @@ app.get("/api/:id", async (req, res) => {
       const tiettyAsiakas = await Customer.findById(asiakasnumero);
       res.status(200).json(tiettyAsiakas);
       res.send(tiettyAsiakas);
+      console.log("Customer " + tiettyAsiakas + " fetched");
     } catch (e) {
       console.error(e);
     }
@@ -93,8 +94,8 @@ app.post("/add", async (req, res) => {
 
   try {
     await uusiAsiakas.save();
-    res.status(201).json({ message: "New document succesfully added" });
-    console.log("New document succesfully added");
+    res.status(201).json({ message: "New customer added succesfully" });
+    console.log("New customer added succesfully");
   } catch (e) {
     console.error(e);
   }
